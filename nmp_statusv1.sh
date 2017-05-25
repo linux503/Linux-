@@ -1,8 +1,8 @@
-# linux
 #qq:48875531
 #mail:48875531@qq.com
 #blog:http://www.mrliangqi.com 
 #[说明：监控nginx php mysql 的使用内存连接数的的脚本~]
+#https://github.com/linux503/linux/blob/master/nmp_statusv1.sh
 #/bin/bash
 echo  "==============Free -m=================="
 free=`free -m`
