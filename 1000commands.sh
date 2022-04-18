@@ -13,6 +13,7 @@
 #w 
 #who #查看当前用户
 #who im i 当前终端
+
 #pkill -kill -t pts/4  #强制踢掉某tty
 4. #从/开始寻找.so的文件
 #find  / name *.so  
@@ -27,6 +28,8 @@
 9.导入公钥
 #pbcopy < ~/.ssh/id_rsa.pub
 10.生成SSH密钥
-#ssh-keygen  -t rsa -C "48875531@qq.com" 
+#ssh-keygen  -t rsa -C "xxxxxxxx@qq.com" 
+
+
 
 
