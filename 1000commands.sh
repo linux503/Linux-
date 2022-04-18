@@ -18,5 +18,5 @@
 #find  / name *.so  
 5.#scp命令传输文件
 #scp root@xxx.xxx.xxx.xx:/root/Documents/Project/wwwroot/controllers/web/ocsp_lib.so  /root/sofile 
-6.
+6..
 
