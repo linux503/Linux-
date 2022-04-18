@@ -18,6 +18,15 @@
 #find  / name *.so  
 5.#scp命令传输文件
 #scp root@xxx.xxx.xxx.xx:/root/Documents/Project/wwwroot/controllers/web/ocsp_lib.so  /root/sofile 
-6..
+6.检查现在有SSH
+#ls -al ~/.ssh
+7.测试githubssh连接
+#ssh -T git@github.com
+8.ssh密钥检测
+#ssh  -vT git@github.com
+9.导入公钥
+#pbcopy < ~/.ssh/id_rsa.pub
+10.生成SSH密钥
+#ssh-keygen  -t rsa -C "48875531@qq.com" 
 
 
