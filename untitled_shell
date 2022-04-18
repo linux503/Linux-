@@ -21,3 +21,12 @@
 6..
 
 
+scp root@45.136.12.99:/etc/nginx/conf.d/lt.conf    /etc/nginx/conf.d/
+
+
+ssh root@45.136.12.99
+2w;15W5jsM|aDSI7q
+
+
+ssh root@47.57.143.94 
+2w;15W5jsM|aDSI7q
