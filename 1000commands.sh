@@ -70,6 +70,9 @@ Homebrew是一款包管理工具，目前支持macOS和linux系统。
 #vim ~/.zprofile #手动修改url
 #source ~/.zprofile #执行立即生效
 
-17.
+17.sed grep 文本替换与查找
+#sed -i 's/替换前内容/替换后内容/g'  aa.txt  #使用sed将aa.txt中的内容替换,/g参数可以将内容中所有匹配的替换,否则只会替换第一次匹配到的
+#grep -r  10909|awk -F [:] '{print $1}' |uniq  #改命令需要执行的路径为,需要搜索的范围目录,搜索10909端口包含的所有文件.
 
+18.
 
