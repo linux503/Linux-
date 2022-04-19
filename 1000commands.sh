@@ -74,5 +74,15 @@ Homebrew是一款包管理工具，目前支持macOS和linux系统。
 #sed -i 's/替换前内容/替换后内容/g'  aa.txt  #使用sed将aa.txt中的内容替换,/g参数可以将内容中所有匹配的替换,否则只会替换第一次匹配到的
 #grep -r  10909|awk -F [:] '{print $1}' |uniq  #改命令需要执行的路径为,需要搜索的范围目录,搜索10909端口包含的所有文件.
 
-18.
+18.Linux安装图像界面desktop_install.sh 
+#!/bin/bash
+yum groupinstall "X Window System"
+yum groupinstall "GNOME Desktop"
+yum install epel-release
+yum install xrdp
+systemctl start xrdp
+systemctl enable xrdp
+# yum groups install "MATE Desktop"
+
+19.
 
