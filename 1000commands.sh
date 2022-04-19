@@ -7,8 +7,10 @@
 #vi /root/history
 #history -r /root/history.txt 
 #history -cw 
+
 2.#查看当前系统连接的IP
-#netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n 
+#netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
+
 3.#查看当前系统连接所有用户
 #w 
 #who #查看当前用户
@@ -17,19 +19,57 @@
 #pkill -kill -t pts/4  #强制踢掉某tty
 4. #从/开始寻找.so的文件
 #find  / name *.so  
+
 5.#scp命令传输文件
-#scp root@xxx.xxx.xxx.xx:/root/Documents/Project/wwwroot/controllers/web/ocsp_lib.so  /root/sofile 
+#scp root@xxx.xxx.xxx.xx:/root/Documents/Project/wwwroot/controllers/web/ocsp_lib.so  /root/sofile
+
 6.检查现在有SSH
 #ls -al ~/.ssh
+
 7.测试githubssh连接
 #ssh -T git@github.com
+
 8.ssh密钥检测
 #ssh  -vT git@github.com
+
 9.导入公钥
 #pbcopy < ~/.ssh/id_rsa.pub
+
 10.生成SSH密钥
 #ssh-keygen  -t rsa -C "xxxxxxxx@qq.com" 
 
+11.Mac修改电脑名称-
+# scutil --set HostName 503
 
+12.通用修改hostname
+#sudo hostname   Linux503
+
+13.安装conda后，每次启动终端，都会自动启动conda的base环境，conda的环境可以用 
+#conda env list  #查看conda的环境列表
+#conda deactivate  #临时删除base
+#conda config --set auto_activate_base false。#永久删除base 
+
+14.修改登录后的bash环境显示信息
+#sudo vim /etc/bashrc
+#source  /etc/bashrc
+
+15.删除/var/mail下的邮件
+#cd  /var/mail
+#echo > hazz 
+
+16.关于Homebrew For Mac
+Homebrew是一款包管理工具，目前支持macOS和linux系统。
+主要有四个部分组成: brew、homebrew-core 、homebrew-cask、homebrew-bottles。
+安装方法:
+#/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+卸载方法
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/uninstall.sh)"
+更新命令:
+#brew update
+更换源地址:
+#vim ~/.zprofile #手动修改url
+#source ~/.zprofile #执行立即生效
+
+17.
 
 
