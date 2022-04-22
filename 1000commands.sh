@@ -129,11 +129,22 @@ systemctl enable xrdp
 
 
 21.文件操作,批量文件内容替换
-
 #find ./ -type f -name  package.xml -exec  sed -i “s/2001/2022/g”{}\;
-#
-# find ./ -type f -name  index.html -exec sed -i"s/2001/2022/g"{}\;
 
+
+
+22.网络连接分析
+$ netstat  -n | awk '/^tcp/ {++S[$NF]}END{for (a in S) print a,S[a]}'
+SYN_RECV 3
+
+23.提取主机IP信息
+ip a |grep "global" | awk '{print $2}' | awk -F/ '{print $1}'
+用了4个命令,查看,过滤,打印某行,某段,
+172.31.15.251
+
+
+24.Shel使用什么场景
+运维高效,非性能高效,日志切割,进程分析,系统初始化等
 
 
 
