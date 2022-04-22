@@ -84,5 +84,58 @@ systemctl start xrdp
 systemctl enable xrdp
 # yum groups install "MATE Desktop"
 
-19.
+19.组合命令(查找出系统中文件最大的目录)
+#du -x --max-depth=1 / | sort -k1 -nr 
+
+-x   -跳过其他文件系统
+--max-depth  -只统计一级目录
+-k	
+-n
+-r  -指定第一列并按照数据大小做反序排序
+
+案例: ~$ sudo du -x --max-depth=1 / | sort -k1 -nr 
+6433432	/
+2497852	/usr
+2454708	/www
+1184368	/var
+169072	/boot
+118588	/.Recycle_bin
+6848	/etc
+1648	/root
+180	/tmp
+92	/home
+32	/snap
+16	/lost+found
+8	/patch
+4	/srv
+4	/opt
+4	/mnt
+4	/media
+
+20.系统碎片,inode资源清理
+# find  -type f |awk -F / -v OFS=/ '{$NF="";dir[$0]++}END{for(i in dir)print dir[i]""i}'|sort -k1 -nr |head
+
+是由 find  awk  sort 和 head 组合而成 
+案例: # find  -type f |awk -F / -v OFS=/ '{$NF="";dir[$0]++}END{for(i in dir)print dir[i]""i}'|sort -k1 -nr |head
+10./
+1./.ssh/
+1./.pip/
+1./.cmake/packages/libevent/
+1./.cache/pip/wheels/ff/b5/f9/5329ae8063250ec6b2f2456b3c32a9eabc13a4d850d0a39f0d/
+1./.cache/pip/wheels/7b/fb/f3/b469c123f958dfff4658e90b33d1c979ca009145803ca7adb2/
+1./.cache/pip/wheels/30/92/1b/72d4f934de9bb23f32ec92236df2256da67ba4de3483c634c7/
+1./.cache/pip/wheels/06/6d/c4/d1fba0de1630fc6d1f48b698ac9e2ec3aac470569e492f8492/
+1./.cache/pip/
+
+
+21.文件操作,批量文件内容替换
+
+#find ./ -type f -name  package.xml -exec  sed -i “s/2001/2022/g”{}\;
+#
+# find ./ -type f -name  index.html -exec sed -i"s/2001/2022/g"{}\;
+
+
+
+
+
 
