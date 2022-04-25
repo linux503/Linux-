@@ -143,7 +143,16 @@ ip a |grep "global" | awk '{print $2}' | awk -F/ '{print $1}'
 172.31.15.251
 
 
-24.Shel使用什么场景
+
+24.打印MAC ip/mac地址
+#ifconfig en0 | grep "inet " | awk '{print $2}' | awk -F/ '{print $1}' 
+192.168.31.218
+
+#ifconfig en0 | grep "ether" | awk '{print $2}' | awk -F/ '{print $1}' 
+36:ba:4a:20:21:04 
+
+ 
+25.Shel使用什么场景
 运维高效,非性能高效,日志切割,进程分析,系统初始化等
 
 
