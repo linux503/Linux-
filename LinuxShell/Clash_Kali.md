@@ -41,3 +41,8 @@ socks:127.0.0.1 端口:7891
 https://github.com/Dreamacro/clash/issues/854 
 [For learning and technical testing only ]
 [仅用于学习和技术测试]
+
+
+
+http://clash.razord.top/#/proxies
+
