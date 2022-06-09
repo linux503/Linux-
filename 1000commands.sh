@@ -94,6 +94,11 @@ systemctl enable xrdp
 -r  -指定第一列并按照数据大小做反序排序
 
 案例: ~$ sudo du -x --max-depth=1 / | sort -k1 -nr 
+
+
+sudo du -xh --max-depth=1 /var/ | sort -k1 -nr 
+
+sudo du -xh --max-depth=1 /usr/| sort -k1 -nr 
 6433432	/
 2497852	/usr
 2454708	/www
