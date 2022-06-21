@@ -1,0 +1,18 @@
+lvse="\033[32m"
+zise="\033[35m"
+end="\033[0m"
+echo -e "                   "${zise}"System Date:"${end}${lvse}$(date +"%F %T")${end}
+echo -e "                   "${zise}"System Name:"${end}${lvse}$([ -f /etc/redhat-release ] && cat /etc/redhat-release || uname -o)${end}
+echo -e "                "${zise}"System machine:"${end}${lvse}$(uname -m)${end}
+echo -e "                 "${zise}"System uptime:"${end}${lvse}$(uptime)${end}
+if [ $dmidestatus -eq 1 ];then echo -e "                "${zise}"System Product:"${end}${lvse}$(dmidecode -s system-product-name) ${end};fi
+if [ $dmidestatus -eq 1 ];then echo -e "                 "${zise}"System Serial:"${end}${lvse}$(dmidecode -s system-serial-number) ${end};fi
+echo -e "                    "${zise}"Login User:"${end}${lvse}$(whoami)${end}
+echo -e "                      "${zise}"Login IP:"${end}${lvse}$(w | grep pts | head -n 1 | awk ‘{print $3}‘)${end}
+echo -e "                           "${zise}"Cpu:"${end}${lvse}$(cat /proc/cpuinfo | grep "model name" | tail -n 1 | awk -F ":" ‘{print $2}‘ | sed ‘
+s/           / /g‘)
+echo -e "                      "${zise}"Cpu Core:"${end}${lvse}$(cat /proc/cpuinfo | grep "model name" | wc -l)${end}
+echo -e "                     "${zise}"Cpu Count:"${end}${lvse}$(cat /proc/cpuinfo | grep "physical id" | sort -u | wc -l)${end}
+echo -e "                        "${zise}"Memory:"${end}${lvse}$((totalmemkb/1000000))" GB"${end}
+echo -e "                     "${zise}"interface:"${end}${lvse} $(ip addr show | grep inet | egrep -v "lo$|:" |  awk ‘{print $NF,": " $2}‘)${end}
+
